@@ -243,7 +243,7 @@ $h6-font-size: 1rem;
 // We use these to style paragraphs
 // $paragraph-font-family: inherit;
 // $paragraph-font-weight: $font-weight-normal;
-// $paragraph-font-size: 1rem;
+$paragraph-font-size: 1rem;
 // $paragraph-line-height: 1.6;
 // $paragraph-margin-bottom: rem-calc(20);
 // $paragraph-aside-font-size: rem-calc(14);
@@ -1479,6 +1479,13 @@ $topbar-bg: $primary-color;
 	font-weight: 300;
 }
 
+.post-date {
+	vertical-align: bottom;
+	font-weight: 300;
+	font-size: $paragraph-font-size;
+	color: #CECBCF;
+}
+
 #new-post-title {
 	box-shadow: inset 0 0px 0px rgba(0, 0, 0, 0) !important;
 	border: 0px solid white !important;
@@ -1492,5 +1499,22 @@ $topbar-bg: $primary-color;
 	border: 0px solid white !important;
 	resize: none;
 	color: $jet;
+}
+
+#new-post-submit {
+	box-shadow: inset 0 0px 0px rgba(0, 0, 0, 0) !important;
+	border: 2px solid $secondary-color !important;
+	background-color: white;
+	font-size: $h5-font-size;
+	color: $secondary-color;
+}
+
+
+#micropost_pic {
+	color: transparent;
+}
+
+a:hover {
+	background-color: transparent !important;
 }
 

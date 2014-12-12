@@ -1,11 +1,33 @@
-
-<% @microposts.each do |micropost| %>
-  <div class ="row">
-    <div class = "small-12 medium-10 large-8 columns">
-      <h5 class = "post-author"> <%= micropost.user.name %> </h5>
-      <%= image_tag micropost.pic.url(:medium) %>
-      <h2 class = "post-title"> <%= micropost.title %> </h2>
-      <p> <%= micropost.content %> </p>
-    </div>
+<div class = "row">
+  <div class = "small-12 medium-10 small-centered columns">
+    <% @microposts.each do |micropost| %>
+      <div class ="row">
+        <div class = "small-12 columns">
+          <div class = "row">
+            <div class = "small-9 columns">
+              <h5 class = "post-author"> <%= micropost.user.name %> </h5>
+            </div>
+            <div class = "small-3 columns">
+              <h6 class = "post-date"><%= micropost.created_at.strftime("%b %d") %></h6>
+            </div>
+          </div>
+          <div class = "row">
+            <div class = "small-12 columns">
+              <%= image_tag micropost.pic.url(:large) if micropost.pic.file? %>
+            </div>
+          </div>
+          <div class = "row">
+            <div class = "small-12 columns">
+              <h2 class = "post-title"> <%= micropost.title %> </h2>
+            </div>
+          </div>
+          <div class = "row">
+            <div class = "small-12 columns">
+              <p> <%= micropost.content %> </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    <% end %>
   </div>
-<% end %>
+</div>
