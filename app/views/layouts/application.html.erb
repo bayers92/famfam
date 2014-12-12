@@ -13,6 +13,22 @@
 
   <body>
 
+    <div class="fixed">
+      <nav class="top-bar" data-topbar role="navigation" data-options="is_hover: false">
+        <div class = "row text-center">
+          <div class ="small-3 columns text-left">
+            <i class="fa fa-bars fa-2x"></i> 
+          </div>
+          <div class ="small-6 columns">
+            <div class = "title"><%= link_to 'All Families', root_url %></div>
+          </div>
+          <div class ="small-3 columns text-right">
+            <%= link_to '<i class="fa fa-edit fa-2x"></i>'.html_safe, new_micropost_path %>
+          </div>
+        </div>
+      </nav>
+    </div>
+
     <div class = "inner-wrapper">
       <%= yield %>
       <%= javascript_include_tag "application" %>

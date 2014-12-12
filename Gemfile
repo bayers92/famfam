@@ -11,6 +11,7 @@ gem 'devise'
 gem 'sdoc',         '0.4.0', group: :doc
 gem "paperclip", 	'~> 4.2'
 gem 'foundation-rails'
+gem 'font-awesome-rails'
 
 group :development, :test do
   gem 'sqlite3',     '1.3.9'
