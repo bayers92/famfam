@@ -10,13 +10,22 @@
 
 <p>
   <strong>User:</strong>
-  <%= @micropost.user_id %>
+  <%= @micropost.user.name %>
 </p>
 
 <p>
   <strong>Pic:</strong>
   <%= image_tag @micropost.pic.url(:medium) %>
 </p>
+
+
+<h2>Comments</h2>
+<%= render @micropost.comments %>
+ 
+<h2>Add a comment:</h2>
+<%= render "comments/form" %>
+ 
+
 
 <%= link_to 'Edit', edit_micropost_path(@micropost) %> |
 <%= link_to 'Back', microposts_path %>

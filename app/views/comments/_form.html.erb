@@ -1,0 +1,10 @@
+<%= form_for([@micropost, @micropost.comments.build]) do |f| %>
+  <%= f.hidden_field :commenter, value: current_user.name %>
+  <p>
+    <%= f.label :body %><br>
+    <%= f.text_area :body %>
+  </p>
+  <p>
+    <%= f.submit %>
+  </p>
+<% end %>
