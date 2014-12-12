@@ -1,6 +1,24 @@
-<h1>Listing Microposts</h1>
+<div class ="row">
+  <h1>Listing Microposts</h1>
+</div>
 
-<table>
+
+<% @microposts.each do |micropost| %>
+  <div class ="row">
+    <div class = "small-12 medium-10 large-8 columns">
+      <%= image_tag micropost.pic.url(:medium) %>
+      <h3> <%= micropost.title %> </h3>
+      <h5> <%= micropost.user.name %> </h5>
+      <p> <%= micropost.content %> </p>
+    </div>
+  </div>
+<% end %>
+
+
+
+
+
+<!-- <table>
   <thead>
     <tr>
       <th>Title</th>
@@ -27,5 +45,7 @@
 </table>
 
 <br>
-
-<%= link_to 'New Micropost', new_micropost_path %>
+ -->
+<div class ="row">
+  <%= link_to 'New Micropost', new_micropost_path %>
+</div>
