@@ -13,14 +13,58 @@
 
   <body>
 
-    <div class="fixed">
+  <div class="off-canvas-wrap" data-offcanvas>
+    <div class="inner-wrap">
+      <div class = "fixed">
+        <nav class="tab-bar">
+          <div class = "row">
+            <div class ="small-3 columns text-left">
+              <a class="left-off-canvas-toggle menu-icon" href="#"><span></span></a>
+            </div>
+
+            <div class ="small-6 columns text-center">
+              <div class = "title"><%= link_to 'yo,Fam <i class="fa fa-smile-o"></i>'.html_safe, root_url %></div>
+            </div>
+
+            <div class ="small-3 columns text-right">
+              <%= link_to '<i class="fa fa-edit fa-2x"></i>'.html_safe, new_micropost_path %>
+            </div>
+          </div>
+        </nav>
+      </div>
+
+      <aside class="left-off-canvas-menu">
+        <ul class="off-canvas-list">
+          <li><label>Foundation</label></li>
+          <li><a href="#">The Psychohistorians</a></li>
+          <li><a href="#">...</a></li>
+        </ul>
+      </aside>
+
+
+      <section class="main-section">
+        <div class = "inner-wrapper">
+          <%= yield %>
+          <%= javascript_include_tag "application" %>
+        </div>
+      </section>
+
+    <a class="exit-off-canvas"></a>
+
+    </div>
+  </div>
+
+
+
+
+  <!--   <div class="fixed">
       <nav class="top-bar" data-topbar role="navigation" data-options="is_hover: false">
         <div class = "row text-center">
           <div class ="small-3 columns text-left">
             <i class="fa fa-bars fa-2x"></i> 
           </div>
           <div class ="small-6 columns">
-            <div class = "title"><%= link_to 'All Families', root_url %></div>
+            <div class = "title"><%= link_to 'yo,Fam <i class="fa fa-smile-o"></i>'.html_safe, root_url %></div>
           </div>
           <div class ="small-3 columns text-right">
             <%= link_to '<i class="fa fa-edit fa-2x"></i>'.html_safe, new_micropost_path %>
@@ -33,6 +77,6 @@
       <%= yield %>
       <%= javascript_include_tag "application" %>
     </div>
-
+ -->
   </body>
 </html>

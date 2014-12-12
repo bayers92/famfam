@@ -811,7 +811,7 @@ $paragraph-font-size: 1rem;
 
 // $include-html-off-canvas-classes: $include-html-classes;
 
-// $tabbar-bg: $oil;
+$tabbar-bg: $primary-color;
 // $tabbar-height: rem-calc(45);
 // $tabbar-icon-width: $tabbar-height;
 // $tabbar-line-height: $tabbar-height;
@@ -1460,6 +1460,7 @@ $topbar-bg: $primary-color;
 
 .title {
 	font-size: $h5-font-size;
+	font-weight: 600;
 	a {
 		color: $white !important;
 	}
@@ -1519,3 +1520,32 @@ a:hover {
 	background-color: transparent !important;
 }
 
+.main-section {
+	padding-top: 50px;
+}
+
+
+
+
+/* remove scroll bars in Safari */
+.off-canvas-wrap .main-section:-webkit-scrollbar { 
+    display: none; 
+}
+// 
+// OFFCANVAS NAV BAR FIX START
+@media #{$small-only} {
+	body,html{
+	    height:100%;
+	    width:100%;
+	}
+	.off-canvas-wrap,.inner-wrap{
+	    height:100%;   
+	}
+
+	.off-canvas-wrap .main-section
+	{
+	  height: 100%; overflow:scroll;
+	  -webkit-overflow-scrolling: touch;
+	}
+}
+// OFFCANVAS NAV BAR FIX END
