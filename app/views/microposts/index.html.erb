@@ -1,5 +1,5 @@
 <div class = "row">
-  <div class = "small-12 medium-10 small-centered columns">
+  <div class = "small-12 medium-10 large-8 small-centered columns">
     <% @microposts.each do |micropost| %>
       <div class ="row">
         <div class = "small-12 columns">
@@ -23,7 +23,13 @@
           </div>
           <div class = "row">
             <div class = "small-12 columns">
-              <p> <%= micropost.content %> </p>
+              <p> <%= micropost.content %>
+              <% if micropost.user == current_user %>
+                <br/>
+                <%= link_to 'Edit', edit_micropost_path(micropost) %> | 
+                <%= link_to "Delete", micropost, method: :delete, data: { confirm: "You sure?" } %>
+              <% end %>
+              </p>
             </div>
           </div>
         </div>
