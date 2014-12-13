@@ -1492,7 +1492,7 @@ $topbar-bg: $primary-color;
 	box-shadow: inset 0 0px 0px rgba(0, 0, 0, 0) !important;
 	border: 0px solid white !important;
 	resize: none;
-	font-size: $h2-font-size;
+	font-size: $h3-font-size;
 	color: $jet;
 }
 
@@ -1533,19 +1533,17 @@ a:hover {
 }
 // 
 // OFFCANVAS NAV BAR FIX START
-@media #{$small-only} {
-	body,html{
-	    height:100%;
-	    width:100%;
-	}
-	.off-canvas-wrap,.inner-wrap{
-	    height:100%;   
-	}
+body,html{
+    min-height:100%;
+    width:100%;
+}
+.off-canvas-wrap,.inner-wrap{
+    height:100%;   
+}
 
-	.off-canvas-wrap .main-section
-	{
-	  height: 100%; overflow:scroll;
-	  -webkit-overflow-scrolling: touch;
-	}
+.off-canvas-wrap .main-section
+{
+  height: 100%; overflow:scroll;
+  -webkit-overflow-scrolling: touch;
 }
 // OFFCANVAS NAV BAR FIX END
