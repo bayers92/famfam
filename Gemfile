@@ -13,6 +13,7 @@ gem "paperclip", 	'~> 4.2'
 gem 'foundation-rails'
 gem 'font-awesome-rails'
 gem 'simple_form'
+gem 'aws-sdk'
 
 group :development, :test do
   gem 'sqlite3',     '1.3.9'
