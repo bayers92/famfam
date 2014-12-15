@@ -39,10 +39,16 @@
             <li><label><%= current_user.email %></label></li>
             <li> <%= link_to "Edit your information", edit_user_registration_path %> </li>
             <li> <%= link_to('Logout', destroy_user_session_path, :method => :delete) %> </li>
+
+            <li> <label> Your Family Members </label> </li>
+            <% @users_all.each do |user| %>
+              <li> <%= link_to user.name, user %></li>
+            <% end %> 
           <% else %>
             <li> <label> Not logged in </label> </li>
             <li>  <%= link_to('Login', new_user_session_path)  %>  </li>
           <% end %>
+
         </ul>
       </aside>
 
