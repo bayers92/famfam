@@ -1,0 +1,1 @@
+Paperclip::Attachment.default_options[:s3_host_name] = 'famfamfambucket.s3.amazonaws.com'
