@@ -1485,7 +1485,6 @@ $topbar-bg: $primary-color;
 	font-weight: 300;
 	font-size: $paragraph-font-size;
 	color: #CECBCF;
-	text-align: right;
 }
 
 #new-post-title {
@@ -1524,6 +1523,10 @@ a:hover {
 	padding-top: 50px;
 }
 
+table.center {
+	margin-left:auto; 
+	margin-right:auto;
+}
 
 
 
