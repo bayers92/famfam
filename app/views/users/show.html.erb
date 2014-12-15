@@ -3,43 +3,41 @@
 		<h1><strong> <%= @user.name %></strong></h1>
 		<p> <%= @user.email %> </p> <br/>
 	</div>
-	<div class = "row">
-		<div class = "small-12 medium-10 large-8 small-centered columns">
-		    <% @user.microposts.each do |micropost| %>
-		      <div class ="row">
-		        <div class = "small-12 columns">
-		          <div class = "row">
-		            <div class = "small-12 columns">
-		              <h5 class = "post-author"> <%= link_to micropost.user.name, micropost.user %> <span class = "post-date"> | <%= micropost.created_at.strftime("%b %d") %></span></h5>
-		            </div>
-		          </div>
-		          <div class = "row">
-		            <div class = "small-12 columns">
-		              <%= image_tag micropost.pic.url(:large) if micropost.pic.file? %>
-		            </div>
-		          </div>
-		          <div class = "row">
-		            <div class = "small-12 columns">
-		              <h2 class = "post-title"> <%= micropost.title %> </h2>
-		            </div>
-		          </div>
-		          <div class = "row">
-		            <div class = "small-12 columns">
-		              <p> <%= micropost.content %>
-		              <% if micropost.user == current_user %>
-		                <br/>
-		                <%= link_to 'Edit', edit_micropost_path(micropost) %> | 
-		                <%= link_to "Delete", micropost, method: :delete, data: { confirm: "You sure?" } %>
-		              <% end %>
-		              </p>
-		            </div>
-		          </div>
-		        </div>
-		      </div>
-		    <% end %>
-		  </div>
+	<div class = "small-12 medium-10 large-8 small-centered columns">
+	    <% @user.microposts.each do |micropost| %>
+	      <div class ="row">
+	        <div class = "small-12 columns">
+	          <div class = "row">
+	            <div class = "small-12 columns">
+	              <h5 class = "post-author"> <%= link_to micropost.user.name, micropost.user %> <span class = "post-date"> | <%= micropost.created_at.strftime("%b %d") %></span></h5>
+	            </div>
+	          </div>
+	          <div class = "row">
+	            <div class = "small-12 columns">
+	              <%= image_tag micropost.pic.url(:large) if micropost.pic.file? %>
+	            </div>
+	          </div>
+	          <div class = "row">
+	            <div class = "small-12 columns">
+	              <h2 class = "post-title"> <%= micropost.title %> </h2>
+	            </div>
+	          </div>
+	          <div class = "row">
+	            <div class = "small-12 columns">
+	              <p> <%= micropost.content %>
+	              <% if micropost.user == current_user %>
+	                <br/>
+	                <%= link_to 'Edit', edit_micropost_path(micropost) %> | 
+	                <%= link_to "Delete", micropost, method: :delete, data: { confirm: "You sure?" } %>
+	              <% end %>
+	              </p>
+	            </div>
+	          </div>
+	        </div>
+	      </div>
+	    <% end %>
 	  </div><br/>
 	  <div class = "small-12 columns text-center">
-		<%= link_to 'View All Members of Family', users_path %>
+		<%= link_to 'View All Family Members', users_path %> <br/><br/>
 	</div>
 </div>
