@@ -14,6 +14,7 @@ gem 'foundation-rails'
 gem 'font-awesome-rails'
 gem 'simple_form'
 gem 'aws-sdk'
+gem 'add-to-homescreen-rails'
 
 group :development, :test do
   gem 'sqlite3',     '1.3.9'
