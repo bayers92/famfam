@@ -12,11 +12,15 @@
     <link rel="apple-touch-startup-image" href="/apple-touch-startup-image.png" media="(orientation:portrait)" />
     <link rel="apple-touch-startup-image" href="/apple-touch-startup-image.png" media="(orientation:landscape)" />
 
-    <title><%= content_for?(:title) ? yield(:title) : "famfam" %></title>
+    <title>FamFam</title>
 
     <%= stylesheet_link_tag    "application" %>
     <%= javascript_include_tag "vendor/modernizr" %>
     <%= csrf_meta_tags %>
+
+    <script>
+      addToHomescreen();
+    </script>
   </head> 
 
   <body>
