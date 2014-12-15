@@ -1,87 +1,42 @@
-<% if Rails.env.development? %>
-  <%= simple_form_for @micropost, html: { class: "directUpload" } do |f| %>
-    <% if @micropost.errors.any? %>
-      <div id="error_explanation">
-        <h2><%= pluralize(@micropost.errors.count, "error") %> prohibited this micropost from being saved:</h2>
+<%= simple_form_for @micropost, html: { multipart: true } do |f| %>
+  <% if @micropost.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@micropost.errors.count, "error") %> prohibited this micropost from being saved:</h2>
 
-        <ul>
-          <% @micropost.errors.full_messages.each do |message| %>
-            <li><%= message %></li>
-          <% end %>
-        </ul>
-      </div>
-    <% end %>
-
-    <div class ="row">
-      <div class = "small-12 columns">
-        <div class="field" id="new-post-title">
-          <%= f.text_area :title, placeholder: "Enter your title", id: "new-post-title" %>
-        </div>
-      </div>
-    </div>
-    <div class ="row">
-      <div class = "small-12 columns">
-        <div class="field">
-          <%= f.text_area :content, placeholder: "Okay, tell us the story..", id: "new-post-content", rows:"12", cols:"50" %>
-        </div>
-      </div>
-    </div>
-    <div class ="row">
-      <div class = "small-12 columns">
-        <h6> Upload a picture </h6>
-          <%= f.file_field :pic %>
-      </div>
-    </div><br/>
-
-    <div class ="row">
-      <div class = "small-12 columns text-center">
-        <div class="actions">
-          <%= f.button :submit, "Submit Post"%>
-        </div>
-      </div>
+      <ul>
+        <% @micropost.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
     </div>
   <% end %>
-<% else %>
-  <%= simple_form_for @micropost, html: { multipart: true } do |f| %>
-    <% if @micropost.errors.any? %>
-      <div id="error_explanation">
-        <h2><%= pluralize(@micropost.errors.count, "error") %> prohibited this micropost from being saved:</h2>
 
-        <ul>
-          <% @micropost.errors.full_messages.each do |message| %>
-            <li><%= message %></li>
-          <% end %>
-        </ul>
-      </div>
-    <% end %>
-
-    <div class ="row">
-      <div class = "small-12 columns">
-        <div class="field" id="new-post-title">
-          <%= f.text_area :title, placeholder: "Enter your title", id: "new-post-title" %>
-        </div>
+  <div class ="row">
+    <div class = "small-12 columns">
+      <div class="field" id="new-post-title">
+        <%= f.text_area :title, placeholder: "Enter your title", id: "new-post-title" %>
       </div>
     </div>
-    <div class ="row">
-      <div class = "small-12 columns">
-        <div class="field">
-          <%= f.text_area :content, placeholder: "Okay, tell us the story..", id: "new-post-content", rows:"12", cols:"50" %>
-        </div>
+  </div>
+  <div class ="row">
+    <div class = "small-12 columns">
+      <div class="field">
+        <%= f.text_area :content, placeholder: "Okay, tell us the story..", id: "new-post-content", rows:"12", cols:"50" %>
       </div>
     </div>
-    <div class ="row">
-      <div class = "small-12 columns">
-        <h6> Upload a picture </h6>
-          <%= f.file_field :pic %>
-      </div>
-    </div><br/>
+  </div>
+  <div class ="row">
+    <div class = "small-12 columns">
+      <h6> Upload a picture </h6>
+        <%= f.file_field :pic %>
+    </div>
+  </div><br/>
 
-    <div class ="row">
-      <div class = "small-12 columns text-center">
-        <div class="actions">
-          <%= f.button :submit, "Submit Post"%>
-        </div>
+  <div class ="row">
+    <div class = "small-12 columns text-center">
+      <div class="actions">
+        <%= f.button :submit, "Submit Post"%>
       </div>
     </div>
-  <% end %>
+  </div>
 <% end %>
