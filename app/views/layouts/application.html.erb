@@ -23,7 +23,7 @@
             </div>
 
             <div class ="small-6 columns text-center">
-              <div class = "title"><%= link_to 'yo,Fam <i class="fa fa-smile-o"></i>'.html_safe, root_url %></div>
+              <div class = "title"><%= link_to 'FamFam <i class="fa fa-smile-o"></i>'.html_safe, root_url %></div>
             </div>
 
             <div class ="small-3 columns text-right">
@@ -35,14 +35,34 @@
 
       <aside class="left-off-canvas-menu">
         <ul class="off-canvas-list">
-          <li><label>Your Family</label></li>
-          <li> <%= current_user.name %> </li>
+          <% if user_signed_in? %>
+            <li><label><%= current_user.email %></label></li>
+            <li> <%= link_to "Edit your information", edit_user_registration_path %> </li>
+            <li> <%= link_to('Logout', destroy_user_session_path, :method => :delete) %> </li>
+          <% else %>
+            <li> <label> Not logged in </label> </li>
+            <li>  <%= link_to('Login', new_user_session_path)  %>  </li>
+          <% end %>
         </ul>
       </aside>
 
 
       <section class="main-section">
         <div class = "inner-wrapper">
+          <div class = "row">
+            <div class = "small-12 medium-10 large-8 small-centered columns">
+              <% if notice != nil %>
+                <div data-alert class="alert-box info radius"><%= notice %>
+                <a href="#" class="close">&times;</a>
+                </div>
+              <% end %>
+              <% if alert != nil %>
+                <div data-alert class="alert-box info radius"><%= alert %>
+                <a href="#" class="close">&times;</a>
+                </div>
+              <% end %>
+            </div>
+          </div>
           <%= yield %>
           <%= javascript_include_tag "application" %>
         </div>
@@ -52,30 +72,5 @@
 
     </div>
   </div>
-
-
-
-
-  <!--   <div class="fixed">
-      <nav class="top-bar" data-topbar role="navigation" data-options="is_hover: false">
-        <div class = "row text-center">
-          <div class ="small-3 columns text-left">
-            <i class="fa fa-bars fa-2x"></i> 
-          </div>
-          <div class ="small-6 columns">
-            <div class = "title"><%= link_to 'yo,Fam <i class="fa fa-smile-o"></i>'.html_safe, root_url %></div>
-          </div>
-          <div class ="small-3 columns text-right">
-            <%= link_to '<i class="fa fa-edit fa-2x"></i>'.html_safe, new_micropost_path %>
-          </div>
-        </div>
-      </nav>
-    </div>
-
-    <div class = "inner-wrapper">
-      <%= yield %>
-      <%= javascript_include_tag "application" %>
-    </div>
- -->
   </body>
 </html>
