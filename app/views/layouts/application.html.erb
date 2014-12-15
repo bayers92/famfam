@@ -16,10 +16,10 @@
   <div class="off-canvas-wrap" data-offcanvas>
     <div class="inner-wrap">
       <div class = "fixed">
-        <nav class="tab-bar">
+        <nav class="tab-bar" data-tabbar role="navigation">
           <div class = "row">
             <div class ="small-3 columns text-left">
-              <a class="left-off-canvas-toggle menu-icon" href="#"><span></span></a>
+              <a class="left-off-canvas-toggle menu-icon" href="#" role="button"><span></span></a>
             </div>
 
             <div class ="small-6 columns text-center">
@@ -33,7 +33,7 @@
         </nav>
       </div>
 
-      <aside class="left-off-canvas-menu">
+      <aside class="left-off-canvas-menu" id="left-off-canvas-menu">
         <ul class="off-canvas-list">
           <% if user_signed_in? %>
             <li><label><%= current_user.email %></label></li>
@@ -42,6 +42,7 @@
 
             <li> <label> Your Family Members </label> </li>
             <% @users_all.each do |user| %>
+              <!-- <li> <a href="/users/<%= user.id%>"> <%= user.name %> </a> -->
               <li> <%= link_to user.name, user %></li>
             <% end %> 
           <% else %>
@@ -74,7 +75,7 @@
         </div>
       </section>
 
-    <a class="exit-off-canvas"></a>
+      <a class="exit-off-canvas"></a>
 
     </div>
   </div>
