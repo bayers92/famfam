@@ -1,6 +1,7 @@
 <p>
-  <strong>Commenter:</strong>
-  <%= comment.commenter %>
+  <%= link_to comment.commenter, comment.commenter %>
+  <% user = User.find(1) %>
+  <%= link_to user.name, user %>
 </p>
  
 <p>
