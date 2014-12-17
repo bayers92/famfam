@@ -1,6 +1,5 @@
 <p>
-  <% id = comment.user_id %>
-  <% user = User.find_by_id(params[:id]) %>
+  <% user = User.find_by_id(comment.user_id) %>
   <%= link_to user.name, user %><br/>
   <%= comment.body %><br/>
 <% if user == current_user %>
