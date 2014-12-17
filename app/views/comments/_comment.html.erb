@@ -1,7 +1,7 @@
 <p>
   <% id = comment.user_id %>
-  <% found_user = User.find_by_id(params[:id]) %>
-
+  <% user = User.find_by_id(params[:id]) %>
+  <%= link_to user.name, user %><br/>
   <%= comment.body %><br/>
 <% if user == current_user %>
 	  <%= link_to 'Delete Comment', [comment.micropost, comment],
