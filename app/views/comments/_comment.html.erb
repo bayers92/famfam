@@ -1,17 +1,14 @@
 <p>
-  <%= link_to comment.commenter, comment.commenter %>
-  <% user = User.find(1) %>
-  <%= link_to user.name, user %>
-</p>
+  <% id = comment.user_id %>
+  <% user = User.find_by_id(params[:id]) %>
+  <%= link_to user.name, user %><br/>
  
-<p>
-  <strong>Comment:</strong>
-  <%= comment.body %>
-</p>
-<% if comment.commenter == current_user %>
-	<p>
-	  <%= link_to 'Destroy Comment', [comment.article, comment],
+  <!-- <strong>Comment:</strong> -->
+  <%= comment.body %><br/>
+<% if user == current_user %>
+	  <%= link_to 'Delete Comment', [comment.micropost, comment],
 	               method: :delete,
 	               data: { confirm: 'Are you sure?' } %>
-	</p>
 <% end %>
+</p>
+<br/>
