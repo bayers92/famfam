@@ -2,8 +2,6 @@
   <% id = comment.user_id %>
   <% user = User.find_by_id(params[:id]) %>
   <%= link_to user.name, user %><br/>
- 
-  <!-- <strong>Comment:</strong> -->
   <%= comment.body %><br/>
 <% if user == current_user %>
 	  <%= link_to 'Delete Comment', [comment.micropost, comment],
@@ -11,4 +9,3 @@
 	               data: { confirm: 'Are you sure?' } %>
 <% end %>
 </p>
-<br/>
